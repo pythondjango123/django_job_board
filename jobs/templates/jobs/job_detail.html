@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ job.title }} - Job Details</title>
+    <link rel="stylesheet" href="{% static 'jobs/job_detail.css' %}">
+</head>
+<body>
+    <div class="job-detail-container">
+        <h2 class="job-title">{{ job.title }}</h2>
+        <p class="job-description">{{ job.description }}</p>
+        <p class="job-location">📍 {{ job.location }}</p>
+        <p class="job-date">🕒 Posted on: {{ job.posted_on }}</p>
+
+        {% if user.is_authenticated %}
+            <a class="apply-btn" href="{% url 'apply_job' job.pk %}">Apply Now</a>
+        {% else %}
+            <p><a class="login-link" href="{% url 'login' %}">Login</a> to apply.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

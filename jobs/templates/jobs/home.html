@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="{% static 'jobs/styles.css' %}">
+    <!-- Font Awesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">JobBoard</div>
+        <div class="nav-buttons">
+            {% if user.is_authenticated %}
+                <span class="welcome-text">Welcome, {{ user.username }}</span>
+                <a class="btn-nav" href="{% url 'logout_confirm' %}"><i class="fa fa-sign-out-alt"></i> Logout</a>
+            {% else %}
+                <a class="btn-nav" href="{% url 'login' %}"><i class="fa fa-sign-in-alt"></i> Login</a>
+                <a class="btn-nav" href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Welcome to the Job Board</h1>
+        <p class="description">
+            Your one-stop platform for exploring exciting career opportunities.<br>
+            Browse jobs, apply with ease, and manage your applications in one place.<br>
+            Whether you're a fresh graduate or an experienced professional – we’ve got you covered.
+        </p>
+        <a class="btn-main" href="{% url 'job_list' %}">View Available Jobs</a>
+    </main>
+</body>
+</html>

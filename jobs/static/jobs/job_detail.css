@@ -1,0 +1,53 @@
+job-detail-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.job-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.job-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.job-location,
+.job-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.apply-btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.apply-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
